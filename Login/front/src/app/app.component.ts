@@ -8,11 +8,12 @@ import { environments } from '../environments/environment';
 import { Usuario } from '../models/Types/UsuariosType';
 import { UsuarioEntity } from '../models/Entitys/usuario.model';
 import { Subscription } from 'rxjs';
+import { FormularioComponent } from './formulario/formulario.component'; // Importa FormularioComponent
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NavegacionComponent],
+  imports: [RouterOutlet, CommonModule, NavegacionComponent, FormularioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
