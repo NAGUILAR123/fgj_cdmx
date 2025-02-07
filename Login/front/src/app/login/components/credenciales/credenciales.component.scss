@@ -1,0 +1,74 @@
+.login {
+    .titulo {
+        color: white;
+    }
+
+    .contenedor {
+        background-color: rgba($color: #e4e4e4, $alpha: .3);
+        padding: 2rem;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .logo {
+            background-color: #fff;
+            padding: .7rem 1.5rem;
+            border-radius: 5px;
+
+            .vector {
+                background-image: url(../../../../../public/svg/fgj_a.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: content-box;
+                height: 18rem;
+                width: 13rem;
+            }
+        }
+    }
+}
+
+.formulario {
+    .campos {
+        .campo {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 1rem;
+            color: white;
+            margin-top: 1rem;
+
+            label {
+                text-align: right;
+                width: 50%;
+            }
+            
+            input {
+                font-size: 1.5rem;
+                background-color: rgba($color: white, $alpha: .1);
+                border: none;
+                border-bottom: 2px solid white;
+                padding: .3rem;
+                color: white;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 2rem;
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        gap: 1rem;
+    }
+}

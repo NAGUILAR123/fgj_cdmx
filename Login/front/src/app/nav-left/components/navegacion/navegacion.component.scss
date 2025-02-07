@@ -1,0 +1,155 @@
+@use '../../../../styles.scss' as s;
+
+.fondo {
+    background-color: s.$azul-principal;
+    height: 100vh;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+
+    .titulo {
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        
+        @include s.media-1280 {
+            flex-direction: row;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .icono {
+            position: static;
+            
+            @include s.media-1280 {
+                position: absolute;
+                top: 40%;
+                right: 0%;
+            }
+        }
+
+        h2 {
+            color: white;
+            font-size: 2.2rem;
+            
+            @include s.media-1280 {
+                font-size: 2.7rem;
+            }
+        }
+
+        svg {
+            cursor: pointer;
+        }
+    }
+}
+
+.componentes {
+    h3 {
+        text-align: center;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+    }
+
+    .menu_collapse {
+        .icon {
+            transition: all .2s ease;
+        }
+
+        a {
+            background-color: #2c5b82;
+            p {
+                font-size: 1.2rem;
+                
+                @include s.media-1280 {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+
+        .card-body {
+            background-color: rgba(s.$azul-terciario, .5);
+        }
+    }
+}
+
+.card-body {
+    a {
+        li {
+            color: white;
+            margin: .4rem;
+            transition: font-size .3s ease;
+            padding: .4rem;
+
+            &:hover {
+                font-size: 1.8rem;
+                color: s.$azul-principal_hover;
+                font-weight: 600;
+            }
+        }
+
+    }
+
+    // en caso de que se active la ruta
+    .activo{
+        color: s.$azul-principal_hover;
+        font-size: 1.8rem;
+        li {
+            color: inherit;
+            font-weight: 600;
+        }
+    }
+}
+
+.opciones {
+    p {
+        color: white;
+    }
+
+    .usuario, .salir {
+        cursor: pointer;
+    }
+}
+
+// Rotacion de los iconos
+.elemento-collapse {
+    .rotarIcono {
+        transform: rotate(180deg);
+    }
+}
+
+// Mostrar un elemento (complemento para ocultar el panel)
+.mostrar {
+    transition: opacity .2s ease-in;
+    opacity: 1;
+}
+
+// Ocultar un elemento (complemento para ocultar el panel)
+.ocultar {
+    transition: opacity .2s ease-out;
+    opacity: 0;
+
+}
+
+// Mover un elemento (complemento para ocultar el panel)
+.mover {
+    transition: all .5s ease;
+    transform: translateX(5%);
+    
+    // @include s.media-1280 {
+    //     transform: translateX(-20%);
+    // }
+}
+
+.icon-tabler-user-edit,
+.icon-tabler-folder-question {
+    width: 2.2;
+    height: 2.2;
+
+    @include s.media-1280 {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+}

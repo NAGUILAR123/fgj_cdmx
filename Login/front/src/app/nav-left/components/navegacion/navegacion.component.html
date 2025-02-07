@@ -1,0 +1,100 @@
+<div class="fondo d-flex flex-column align-content-center justify-content-between py-5">
+    <div>
+        <!-- Encabezado Nav -->
+        <div class="titulo d-flex justify-content-between mx-5">
+            <!-- <h1> {{verificarOcultarNav()}} </h1> -->
+            <h2 [ngClass]="!ocultarNav ? 'mostrar' : 'ocultar'"> {{ nombreSistema }} </h2>
+            <div (click)="ocultar()" class="icono z-1" [ngClass]="!ocultarNav ? '' : 'mover'">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="32"
+                    height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 6l16 0" />
+                    <path d="M4 12l16 0" />
+                    <path d="M4 18l16 0" />
+                </svg>
+            </div>
+        </div> <!-- End Encabezado Nav -->
+
+        <!-- Cuerpo Nav -->
+        <div class="componentes">
+            <h3 class="text-white my-3" [ngClass]="!ocultarNav ? 'mostrar' : 'ocultar'">Componentes</h3>
+
+            <div class="menu_collapse d-flex flex-column mt-3">
+                <!-- TAMIZAJE -->
+                <div class="elemento-collapse">
+
+                    <!-- titulo tamizaje -->
+                    <a class="p-4 text-white d-flex justify-content-between align-items-center px-5" data-bs-toggle="collapse"
+                        href="#collapseTamizaje" role="button" aria-expanded="false" aria-controls="collapseTamizaje"
+                        (click)="rotarIconoTamizaje()">
+                        <p class="d-flex align-content-center justify-content-center gap-4">
+                            <span class="icono">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-folder-question mb-1" width="22" height="22"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M15 19h-10a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2.5" />
+                                    <path d="M19 22v.01" />
+                                    <path d="M19 19a2.003 2.003 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+                                </svg>
+                            </span>
+                            
+                            <!-- titulo -->
+                            <span class="titulo-seccion" [ngClass]="!ocultarNav ? 'mostrar' : 'ocultar'">Sistema</span>
+                        </p>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-arrow-badge-down-filled" width="25" height="25"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round" [ngClass]="{'rotarIcono': iconoTamizaje}"
+                            [ngClass]="!ocultarNav ? 'mostrar' : 'ocultar'">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M16.375 6.22l-4.375 3.498l-4.375 -3.5a1 1 0 0 0 -1.625 .782v6a1 1 0 0 0 .375 .78l5 4a1 1 0 0 0 1.25 0l5 -4a1 1 0 0 0 .375 -.78v-6a1 1 0 0 0 -1.625 -.78z"
+                                stroke-width="0" fill="currentColor" />
+                        </svg>
+                    </a> <!-- End titulo tamizaje -->
+
+                    <!-- lista navegacion -->
+                    <div class="collapse p-0" id="collapseTamizaje">
+                        <div class="card card-body rounded-0">
+                            <ul>
+                                <a routerLink="/bienvenida" routerLinkActive="activo">
+                                    <li>Acceso</li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div> <!-- End lista navegacion -->
+                </div> <!-- End TAMIZAJE -->
+            </div>
+        </div> <!-- End Cuerpo Nav -->
+    </div>
+
+
+    <!-- Cuenta -->
+    <div class="">
+        <div class="opciones d-flex justify-content-between align-content-center mx-5 mb-5 h-100"
+        [ngClass]="ocultarNav ? 'flex-column-reverse' : 'flex-row'">
+            <!-- Log Out-->
+            <div class="salir d-flex flex-column align-items-center justify-content-center"
+                data-bs-target="#modalMensaje" data-bs-toggle="modal" (click)="logOut()">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="32"
+                        height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+                        <path d="M15 12h-12l3 -3" />
+                        <path d="M6 15l-3 -3" />
+                    </svg>
+                </div>
+                <!-- <p>Salir</p> -->
+            </div><!-- End Log Out-->
+        </div> <!-- End Cuenta -->
+    </div>
+</div>
+
+<!-- Modal -->
+<app-modal [id]="'modalMensaje'" [titulo]="'Cerrar sesión'" [mensaje]="'¿Seguro que quieres cerrar la sesión?'"/>

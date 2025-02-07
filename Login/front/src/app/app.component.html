@@ -1,0 +1,56 @@
+@if(sesion) {
+
+<!-- CORREGIR / ARREGLAR / ACABAR LA BARRA SUPERIOR (AJUSTAR LOS ESTILOS) -->
+
+
+  <div class="d-grid" [ngClass]="ocultarNav ? 'ocultar': 'mostrar'">
+    <app-navegacion/>
+    <div class="componentes d-flex flex-column">
+      <header class="encabezado px-2 text-center">
+        <p class="d-inline-flex gap-1 w-100 m-auto">
+          <a class="d-grid w-100" role="button" href="#collapseHeader"
+          aria-expanded="false" aria-controls="collapseHeader" data-bs-toggle="collapse">
+            <p> {{ rol }} </p>
+            <!-- MENU -->
+            <div class="menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="2.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 6l16 0" />
+                <path d="M4 12l16 0" />
+                <path d="M4 18l16 0" />
+              </svg>
+            </div> <!-- MENU -->
+            
+            <p> {{ nombre }} </p>
+          </a>
+        </p>
+        <!-- COLLAPSE -->
+        <div class="collapse w-100" id="collapseHeader">
+          <div class="d-flex justify-content-between align-items-center gap-5 px-3">
+            <!-- LOGO -->
+            <div class="img">
+              <img  src="../../public/img/logo-fgj.jpg" alt="FGJCDMX" width="120px">
+            </div> <!-- LOGO -->
+
+            <!-- DATOS GRALES -->
+            <div class="ul text-end">
+              <ul class="info-usuario rounded-1 px-2 fs-5" >
+                <li> {{ nombre }} - {{ rol }} </li>
+                <li> {{ area }} </li>
+                <li> {{ agencia }} </li>
+                <li> {{ unidad }} </li>
+              </ul>
+            </div> <!-- DATOS GRALES -->
+          </div>
+        </div> <!-- COLLAPSE -->
+      </header>
+
+      <router-outlet/>
+    </div>
+  </div>
+} @else {
+  <div class="page-login">
+      <router-outlet/>
+  </div>
+}

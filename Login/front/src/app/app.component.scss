@@ -1,0 +1,76 @@
+@use '../styles.scss' as s;
+
+.d-grid {
+    transition: grid-template-columns 0.3s ease;
+    
+    .encabezado {
+        background-color: s.$gris-borde;
+        border-bottom: 1px solid black;
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+.mostrar {
+    grid-template-columns: 30% 70%;
+    
+    @include s.media-1280 {
+        grid-template-columns: 20% 80%;
+    }
+
+    @include s.media-1920 {
+        grid-template-columns: 15% 85%;
+    }
+}
+
+.ocultar {
+
+    @include s.media-600 {
+        grid-template-columns: 11% 89%;
+    }
+
+    @include s.media-1280 {
+        grid-template-columns: 7% 93%;
+    }
+
+    @include s.media-1920 {
+        grid-template-columns: 5% 95%;
+    }
+
+
+}
+
+.page-login {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    p {
+        a {
+            grid-template-columns: 2fr 1fr 2fr;
+            justify-items: space-between;
+        }
+    }
+}
+
+.info-usuario {
+    cursor: pointer;
+    transition: background-color .3s ease;
+    &:hover {
+        background-color: darken($color: s.$gris-borde, $amount: 10);
+    }
+}
+
+.mostrar-barra {
+    opacity: 1;
+    z-index: 1;
+}
+
+.ocultar-barra {
+    opacity: 0;
+    z-index: 0;
+}

@@ -1,0 +1,44 @@
+<div class="login">
+    <h1 class="titulo text-center mb-3 fw-bold">Ingrese sus credenciales</h1>
+    
+    <div class="contenedor">
+        <div class="logo">
+            <div class="vector"></div>
+        </div>
+
+        <form class="formulario"
+            [formGroup]="credenciales" (ngSubmit)="onSubmit()">
+
+            <div class="campos">
+
+                <!-- Mensjaes de alerta o error -->
+                <p class="mensaje error mb-4" [ngClass]="mensaje === '' ? 'opacity-0' : 'opacity-100'">*{{ mensaje }}*</p>
+
+                <div class="campo">
+                    <label for="username">Usuario</label>
+                    <input type="text" name="username" id="username"
+                        formControlName="username">
+                </div>
+                <div class="campo">
+                    <label for="pass">Contraseña</label>
+                    <input type="password" name="pass" id="pass"
+                        formControlName="password">
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary" [disabled]="credenciales.invalid">
+                Siguiente
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M5 12l14 0" />
+                    <path d="M15 16l4 -4" />
+                    <path d="M15 8l4 4" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <!-- Copy -->
+    <app-copyright/>
+</div>
