@@ -1,0 +1,44 @@
+// SCSS para personalizar los campos y la alineación
+
+.container {
+  // Ajuste general para la separación de las filas
+  margin-top: 20px;
+  
+  .row {
+    margin-bottom: 15px;  // Espacio entre filas
+  }
+
+  .label {
+    margin-right: 10px;  // Espacio entre el label y el input
+    font-size: 16px;  // Tamaño de fuente del label
+    font-weight: 500;
+  }
+
+  .form-control {
+    padding: 10px; // Padding dentro de los campos de entrada
+    border-radius: 5px;  // Bordes redondeados
+    border: 1px solid #ccc;  // Color de borde
+    font-size: 14px;  // Tamaño de fuente del input
+  }
+
+  // Estilos responsivos
+  @media (max-width: 768px) {
+    .row {
+      margin-bottom: 10px;  // Menos espacio entre filas en pantallas pequeñas
+    }
+
+    .form-control {
+      font-size: 16px;  // Aumentar el tamaño de fuente en móviles
+    }
+  }
+
+  @media (min-width: 768px) {
+    .form-control {
+      font-size: 14px;  // Tamaño normal en pantallas medianas y grandes
+    }
+
+    .label {
+      font-size: 18px;  // Aumentar el tamaño de fuente de los labels en pantallas grandes
+    }
+  }
+}

@@ -1,112 +1,129 @@
 <div class="container-fluid">
-    <header class="row bg-primary text-white p-3 mb-4">
-      <div class="col-md-6 d-flex align-items-center">
-        <img src="../../../public/img/logo-fgj.jpg" class="img-fluid" style="max-width: 120px;" alt="Logo FGJ">
-      </div>
-      <div class="col-md-6 text-end">
-        <h5 class="mb-1">ANGÉLICA ALCÁNTARA VERA</h5>
-        <p class="mb-0">AUXILIAR DE MEDIACIÓN</p>
-        <p>UNIDAD DE MEDIACIÓN ESPECIALIZADA</p>
-      </div>
-    </header>
-  
-    <main class="row">
-      <div class="col-12">
-        <form>
-          <div class="mb-4 d-flex gap-2">
-            <button type="button" class="btn btn-primary">DATOS GENERALES</button>
-            <button type="button" class="btn btn-secondary">DESCRIPCIÓN DE LOS HECHOS</button>
+  <header class="row bg-primary text-white p-3 mb-4">
+    <div class="col-md-6 d-flex align-items-center">
+      <img src="../../../public/img/logo-fgj.jpg" class="img-fluid" style="max-width: 120px;" alt="Logo FGJ">
+    </div>
+    <div class="col-md-6 text-end">
+      <h5 class="mb-1">ANGÉLICA ALCÁNTARA VERA</h5>
+      <p class="mb-0">AUXILIAR DE MEDIACIÓN</p>
+      <p>UNIDAD DE MEDIACIÓN ESPECIALIZADA</p>
+    </div>
+  </header>
+
+  <main class="row">
+    <div class="col-12">
+      <form>
+        <div class="mb-2 d-flex gap-2">
+          <button type="button" class="btn btn-primary">DATOS GENERALES</button>
+          <button type="button" class="btn btn-secondary">DESCRIPCIÓN DE LOS HECHOS</button>
+        </div>
+
+        <section class="mb-2">
+          <div class="row align-items-center">
+            <div class="col-md-3 d-flex align-items-center">
+              <label for="calidadJuridica" class="form-label fw-bold me-2">Calidad Jurídica:</label>
+              <select id="calidadJuridica" class="form-select form-select-sm">
+                <option value="SOLICITANTE">SOLICITANTE</option>
+              </select>
+            </div>
+            <div class="col-md-3 d-flex align-items-center">
+              <label for="tipoEntidad" class="form-label fw-bold me-2">Tipo de Entidad:</label>
+              <select id="tipoEntidad" class="form-select form-select-sm">
+                <option value="">PERSONA FISÍCA</option>
+             </select>
+            </div>
           </div>
-  
-          <section class="mb-4">
-            <div class="row">
-              <div class="col-md-3">
-                <label for="calidadJuridica" class="form-label fw-bold">Calidad Jurídica:</label>
-              </div>
-              <div class="col-md-9">
-                <select id="calidadJuridica" class="form-select">
-                  <option value="SOLICITANTE">SOLICITANTE</option>
-                </select>
-              </div>
+        </section>
+        
+        <!-- Sección Nombre, Apellido, Edad, Estado Civil, Sexo en una sola línea -->
+        <section class="mb-2">
+          <div class="row align-items-center">
+            <!-- Nombre -->
+            <div class="col-md-1">
+              <label for="nombre" class="form-label fw-bold">Nombre:</label>
             </div>
-          </section>
-  
-          <section class="mb-4">
-            <div class="row">
-              <div class="col-md-3">
-                <label class="form-label fw-bold">Nombre:</label>
-              </div>
-              <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="Nombre(s)">
-              </div>
-              <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="Apellido Paterno">
-              </div>
-              <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="Apellido Materno">
-              </div>
+            <div class="col-md-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Nombre(s)">
             </div>
-          </section>
-  
-          <section class="mb-4">
-            <div class="row">
-              <div class="col-md-3">
-                <label for="ocupacion" class="form-label fw-bold">Ocupación:</label>
-              </div>
-              <div class="col-md-9">
-                <select id="ocupacion" class="form-select">
-                  <option value="">Seleccione...</option>
-                </select>
-              </div>
+
+            <!-- Apellido Paterno -->
+            <div class="col-md-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Apellido Paterno">
             </div>
-            <div class="row mt-2">
-              <div class="col-md-3">
-                <label for="nacionalidad" class="form-label fw-bold">Nacionalidad:</label>
-              </div>
-              <div class="col-md-9">
-                <select id="nacionalidad" class="form-select">
-                  <option value="">Seleccione...</option>
-                </select>
-              </div>
+
+            <!-- Apellido Materno -->
+            <div class="col-md-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Apellido Materno">
             </div>
-          </section>
-  
-          <section class="mb-4">
-            <div class="row">
-              <div class="col-md-3">
-                <label for="escolaridad" class="form-label fw-bold">Escolaridad:</label>
-              </div>
-              <div class="col-md-9">
-                <select id="escolaridad" class="form-select">
-                  <option value="">Seleccione...</option>
-                </select>
-              </div>
+
+            <!-- Edad -->
+            <div class="col-md-1">
+              <label for="edad" class="form-label fw-bold">Edad:</label>
             </div>
-          </section>
-  
-          <section class="mb-4">
-            <div class="row">
-              <div class="col-md-3">
-                <label for="curp" class="form-label fw-bold">CURP:</label>
-              </div>
-              <div class="col-md-9">
-                <input type="text" id="curp" class="form-control" placeholder="CURP">
-              </div>
+            <div class="col-md-2">
+              <input type="text" id="edad" class="form-control form-control-sm" placeholder="Edad">
             </div>
-            <div class="row mt-2">
-              <div class="col-md-3">
-                <label for="fechaNacimiento" class="form-label fw-bold">Fecha de Nacimiento:</label>
-              </div>
-              <div class="col-md-9">
-                <input type="date" id="fechaNacimiento" class="form-control">
-              </div>
+
+            <!-- Estado Civil --> 
+             
+            <div class="col-md-2">
+              <label for="estadoCivil" class="form-label fw-bold">Estado Civil:</label>
+              <select id="estadoCivil" class="form-select form-select-sm">
+                <option value="">Seleccione...</option>
+              </select>
             </div>
-          </section>
-  
-          <div class="text-end">
-            <button type="submit" class="btn btn-success">Guardar</button>
+
+            <!-- Sexo -->
+            <div class="col-md-2">
+              <label for="sexo" class="form-label fw-bold">Sexo:</label>
+              <select id="sexo" class="form-select form-select-sm">
+                <option value="">Seleccione...</option>
+              </select>
+            </div>
           </div>
-        </form>
-      </div>
-    </main>
-  </div>
+        </section>
+
+        <section class="mb-2">
+          <div class="row align-items-center">
+            <div class="col-md-3">
+              <label for="ocupacion" class="form-label fw-bold">Ocupación:</label>
+              <select id="ocupacion" class="form-select form-select-sm">
+                <option value="">Seleccione...</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="nacionalidad" class="form-label fw-bold">Nacionalidad:</label>
+              <select id="nacionalidad" class="form-select form-select-sm">
+                <option value="">Seleccione...</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="escolaridad" class="form-label fw-bold">Escolaridad:</label>
+              <select id="escolaridad" class="form-select form-select-sm">
+                <option value="">Seleccione...</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-2">
+          <div class="row align-items-center">
+            <div class="col-md-3">
+              <label for="curp" class="form-label fw-bold">Curp:</label>
+              <input type="text" id="curp" class="form-control form-control-sm" placeholder="CURP">
+            </div>
+            <div class="col-md-3">
+              <label for="fechaNacimiento" class="form-label fw-bold">Fecha de Nacimiento:</label>
+              <input type="date" id="fechaNacimiento" class="form-control form-control-sm">
+            </div>
+          </div>
+        </section>
+
+        <div class="text-end">
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+    
